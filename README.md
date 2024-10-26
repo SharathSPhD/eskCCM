@@ -13,8 +13,8 @@ This project extends the functionality of the [skCCM](https://github.com/nickc1/
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/extended-ccm.git
-    cd extended-ccm
+    git clone https://github.com/SharathSPhD/eskCCM.git
+    cd eskCCM
     ```
 
 2. Install the required dependencies:
