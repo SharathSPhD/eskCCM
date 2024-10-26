@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from skccm import CCM, Embed
 import os
-from eskCCM import ExtendedCCM
+from modules import ExtendedCCM
 
 def plot_ccm_skills(ccm_skill, title, test_name, results_dir='results'):
     """Plot cross-map skills vs lags and save to file."""
