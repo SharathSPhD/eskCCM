@@ -1,4 +1,3 @@
-
 # Extended CCM: Building on skCCM
 
 This project extends the functionality of the [skCCM](https://github.com/nickc1/skccm) library by adding additional features for handling time lags, embedding dimensions, and applying the methodology based on the extended Convergent Cross Mapping (CCM) as described by Sugihara et al.
@@ -43,6 +42,11 @@ You can run the provided examples for both the standard CCM workflow (`skCCM`) a
     python examples/sugihara_extended_examples.py
     ```
 
+3. **Run the ExtendedCCM Test**:
+    ```bash
+    python examples/diagnostic.py
+    ```
+
 ## Modules
 
 This project includes the following modules:
@@ -56,3 +60,44 @@ Unit tests are available for each module. To run the tests, use:
 ```bash
 pytest tests/
 ```
+
+## ExtendedCCM Class
+
+The `ExtendedCCM` class extends the functionality of the standard `CCM` class by adding additional features for handling time lags, embedding dimensions, and applying the methodology based on the extended Convergent Cross Mapping (CCM) as described by Sugihara et al.
+
+### Usage
+
+To use the `ExtendedCCM` class, you can follow the example provided in `examples/diagnostic.py`. Here is a brief overview:
+
+1. **Import the class**:
+    ```python
+    from modules.extended_ccm import ExtendedCCM
+    ```
+
+2. **Generate data**:
+    ```python
+    x, y = generate_bidirectional_data()
+    ```
+
+3. **Initialize the ExtendedCCM object**:
+    ```python
+    extended_ccm = ExtendedCCM(x, y, max_dim=3)
+    ```
+
+4. **Detect causality**:
+    ```python
+    causality_type, ccm_skill = extended_ccm.detect_causality(
+        x_stable, y_stable,
+        lags,
+        embed_dim=2,
+        library_length=500
+    )
+    ```
+
+5. **Plot results**:
+    ```python
+    plot_ccm_skills(ccm_skill, "ExtendedCCM: Bidirectional Causality", 
+                   "extended_ccm_bidirectional", "results")
+    ```
+
+For more details, refer to the `examples/diagnostic.py` file.

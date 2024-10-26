@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from skccm import CCM, Embed
 import os
+from modules.extended_ccm import ExtendedCCM
 
 def plot_ccm_skills(ccm_skill, title, test_name, results_dir='results'):
     """Plot cross-map skills vs lags and save to file."""
@@ -212,9 +213,34 @@ def test_ccm_analysis(causality_type, library_length=None):
     
     return ccm_skill
 
+def test_extended_ccm():
+    """Test the ExtendedCCM class."""
+    # Generate bidirectional data
+    x, y = generate_bidirectional_data()
+    extended_ccm = ExtendedCCM(x, y, max_dim=3)
+    lags = np.arange(-8, 9)
+    
+    x_stable = x[100:2000]
+    y_stable = y[100:2000]
+    
+    causality_type, ccm_skill = extended_ccm.detect_causality(
+        x_stable, y_stable,
+        lags,
+        embed_dim=2,
+        library_length=500
+    )
+    
+    plot_ccm_skills(ccm_skill, "ExtendedCCM: Bidirectional Causality", 
+                   "extended_ccm_bidirectional", "results")
+    
+    print(f"Detected causality type: {causality_type}")
+
 if __name__ == "__main__":
     # Test all causality types
     for causality_type in ['synchrony', 'bidirectional', 'transitive']:
         ccm_skill = test_ccm_analysis(causality_type)
+    
+    # Test the ExtendedCCM class
+    test_extended_ccm()
     
     print("\nResults saved to 'results' directory.")
