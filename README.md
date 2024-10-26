@@ -1,8 +1,8 @@
 # Extended CCM: Building on skCCM
 
-This project extends the functionality of the [skCCM](https://github.com/nickc1/skccm) library by adding additional features for handling time lags, embedding dimensions, and applying the methodology based on the extended Convergent Cross Mapping (CCM) as described by Sugihara et al.
+This project extends the functionality of the [skCCM](https://github.com/nickc1/skccm) library by adding additional features for handling time lags, embedding dimensions, and applying the methodology based on the extended Convergent Cross Mapping (CCM) as described by Ye et al (https://www.nature.com/articles/srep14750).
 
-## Table of Contents
+## Table of Contents)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Modules](#modules)
@@ -56,7 +56,7 @@ pytest tests/
 
 ## ExtendedCCM Class
 
-The `ExtendedCCM` class extends the functionality of the standard `CCM` class by adding additional features for handling time lags, embedding dimensions, and applying the methodology based on the extended Convergent Cross Mapping (CCM) as described by Sugihara et al.
+The `ExtendedCCM` class extends the functionality of the standard `CCM` class by adding additional features for handling time lags, embedding dimensions, and distinguish between synchrony induced by strong unidirectional-forcing and true bidirectional causality and resolve transitive causal chains (Ye et al).
 
 ### Usage
 
