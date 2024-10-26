@@ -37,12 +37,7 @@ You can run the provided examples for both the standard CCM workflow (`skCCM`) a
     python examples/skccm_examples.py
     ```
 
-2. **Run the Sugihara Extended Example**:
-    ```bash
-    python examples/sugihara_extended_examples.py
-    ```
-
-3. **Run the ExtendedCCM Test**:
+2. **Run the ExtendedCCM Test**:
     ```bash
     python examples/diagnostic.py
     ```
@@ -51,8 +46,6 @@ You can run the provided examples for both the standard CCM workflow (`skCCM`) a
 
 This project includes the following modules:
 - `extended_ccm.py`: Provides an extended CCM class for handling time lags and embedding dimensions.
-- `mutual_information.py`: Functions for calculating mutual information to determine optimal lag.
-- `false_nearest_neighbors.py`: Functions for calculating the optimal embedding dimension using the False Nearest Neighbors (FNN) method.
 
 ## Testing
 
