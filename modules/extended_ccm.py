@@ -1,4 +1,4 @@
-from skccm import CCM
+from skCCM import CCM
 import numpy as np
 
 class ExtendedCCM(CCM):

@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from skccm import CCM, Embed
 import os
-from modules.extended_ccm import ExtendedCCM
+from eskCCM.extended_ccm import ExtendedCCM
 
 def plot_ccm_skills(ccm_skill, title, test_name, results_dir='results'):
     """Plot cross-map skills vs lags and save to file."""
@@ -135,11 +135,11 @@ def generate_transitive_data(ts_length=3000):
 def test_ccm_analysis(causality_type, library_length=None):
     """Run CCM analysis for specified causality type."""
     # Generate appropriate data
-    if causality_type == 'synchrony':
+    if (causality_type == 'synchrony'):
         x, y = generate_synchrony_data()
         embed_dim = 2
         lib_len = 200 if library_length is None else library_length
-    elif causality_type == 'bidirectional':
+    elif (causality_type == 'bidirectional'):
         x, y = generate_bidirectional_data()
         embed_dim = 3
         lib_len = 200 if library_length is None else library_length
@@ -150,7 +150,7 @@ def test_ccm_analysis(causality_type, library_length=None):
         lib_len = 400 if library_length is None else library_length
     
     # Get stable portion of time series
-    if causality_type == 'transitive':
+    if (causality_type == 'transitive'):
         x_stable = x[200:2200]
         y_stable = y[200:2200]
     else:
@@ -178,9 +178,9 @@ def test_ccm_analysis(causality_type, library_length=None):
         X2 = embed_y.embed_vectors_1d(lag=abs(lag) if lag != 0 else 1, embed=embed_dim)
         
         # Adjust for positive/negative lags
-        if lag > 0:
+        if (lag > 0):
             X1, X2 = X1[:-lag], X2[lag:]
-        elif lag < 0:
+        elif (lag < 0):
             X1, X2 = X1[-lag:], X2[:lag]
         
         # Ensure equal lengths

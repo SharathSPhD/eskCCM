@@ -13,7 +13,7 @@ This project extends the functionality of the [skCCM](https://github.com/nickc1/
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/extended-ccm.git
+    git clone https://github.com/SharathSPhD/eskCCM.git
     cd extended-ccm
     ```
 
@@ -30,19 +30,14 @@ This project extends the functionality of the [skCCM](https://github.com/nickc1/
 ## Usage
 
 ### Running the examples
-You can run the provided examples for both the standard CCM workflow (`skCCM`) and the extended version based on Sugihara's work.
+You can run the provided examples for both the standard CCM workflow (`eskCCM`) and the extended version based on Sugihara's work.
 
-1. **Run the skCCM Example**:
+1. **Run the eskCCM Example**:
     ```bash
     python examples/skccm_examples.py
     ```
 
-2. **Run the Sugihara Extended Example**:
-    ```bash
-    python examples/sugihara_extended_examples.py
-    ```
-
-3. **Run the ExtendedCCM Test**:
+2. **Run the ExtendedCCM Test**:
     ```bash
     python examples/diagnostic.py
     ```
@@ -51,8 +46,6 @@ You can run the provided examples for both the standard CCM workflow (`skCCM`) a
 
 This project includes the following modules:
 - `extended_ccm.py`: Provides an extended CCM class for handling time lags and embedding dimensions.
-- `mutual_information.py`: Functions for calculating mutual information to determine optimal lag.
-- `false_nearest_neighbors.py`: Functions for calculating the optimal embedding dimension using the False Nearest Neighbors (FNN) method.
 
 ## Testing
 
@@ -71,7 +64,7 @@ To use the `ExtendedCCM` class, you can follow the example provided in `examples
 
 1. **Import the class**:
     ```python
-    from modules.extended_ccm import ExtendedCCM
+    from eskCCM.extended_ccm import ExtendedCCM
     ```
 
 2. **Generate data**:

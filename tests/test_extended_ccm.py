@@ -1,11 +1,11 @@
 import numpy as np
 import pytest
-from skccm import CCM, Embed
+from eskCCM import CCM, Embed
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
-from modules.extended_ccm import ExtendedCCM
+from eskCCM.extended_ccm import ExtendedCCM
 from examples.diagnostic import test_extended_ccm
 
 # Helper visualization functions for debugging

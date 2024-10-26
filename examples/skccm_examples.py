@@ -1,9 +1,9 @@
-import skccm as ccm
-import skccm.data as data
+import skCCM as ccm
+import skCCM.data as data
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
-from skccm.utilities import train_test_split
+from skCCM.utilities import train_test_split
 
 # Configure seaborn for better visuals
 sns.set_style('ticks')
