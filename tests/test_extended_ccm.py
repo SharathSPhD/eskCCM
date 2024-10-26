@@ -6,6 +6,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
 from modules.extended_ccm import ExtendedCCM
+from examples.diagnostic import test_extended_ccm
 
 # Helper visualization functions for debugging
 def plot_ccm_skills(ccm_skill, title, test_name, results_dir='test_results'):
@@ -243,6 +244,10 @@ def test_transitive_causality():
         print(f"Lag {lag:5.1f}: Y1→Y4 = {skill_x:.3f}, Y4→Y1 = {skill_y:.3f}")
     
     assert causality_type == "Transitive", f"Expected 'Transitive', got {causality_type}"
+
+def test_extended_ccm_integration():
+    """Test the integration of ExtendedCCM with the existing codebase."""
+    test_extended_ccm()
 
 if __name__ == "__main__":
     pytest.main([__file__])
