@@ -5,8 +5,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os
-from modules.extended_ccm import ExtendedCCM
-from examples.diagnostic import test_extended_ccm
+from eskCCM import ExtendedCCM
+from eskCCM.examples.diagnostic import test_extended_ccm
 
 # Helper visualization functions for debugging
 def plot_ccm_skills(ccm_skill, title, test_name, results_dir='test_results'):
